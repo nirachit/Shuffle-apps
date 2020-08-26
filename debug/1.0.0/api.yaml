@@ -6,7 +6,7 @@ contact_info:
   url: https://shuffler.io
   email: frikky@shuffler.io
 actions:
-  - name: debuging or start node
+  - name: debuging_mode
     description: Returns Hello World from the hostname the action is run on
     returns:
     example: HELLO WORLD FROM host.name

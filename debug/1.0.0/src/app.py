@@ -23,7 +23,7 @@ class HelloWorld(AppBase):
         """
         super().__init__(redis, logger, console_logger)
 
-    async def hello_world(self):
+    async def debuging_mode(self):
         """
         Returns Hello World from the hostname the action is run on
         :return: Hello World from your hostname
