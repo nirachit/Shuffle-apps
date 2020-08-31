@@ -3,6 +3,7 @@ import asyncio
 import time
 import random
 import json
+import re
 
 from ioc_finder import find_iocs
 from walkoff_app_sdk.app_base import AppBase
@@ -109,9 +110,8 @@ class Tools(AppBase):
         return "Some return: %s" % shuffle_input 
 
     async def parse_json(self, str_input):
-        json_strings = str_input.replace("\\","")
+        json_strings = re.split(', :',str_input)
         #json_object = json.loads(json_strings)
-        
         return json_strings
 
 if __name__ == "__main__":
