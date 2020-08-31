@@ -109,9 +109,10 @@ class Tools(AppBase):
         return "Some return: %s" % shuffle_input 
 
     async def parse_json(self, str_input):
-        json_strings = str_input.replace("\\","")
-        json_object = json.loads(json_strings)
-        return json_object
+        #json_strings = str_input.replace("\\","")
+        #json_object = json.loads(json_strings)
+        
+        return type(str_input)
 
 if __name__ == "__main__":
     asyncio.run(Tools.run(), debug=True)
