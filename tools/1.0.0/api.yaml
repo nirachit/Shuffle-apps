@@ -110,7 +110,7 @@ actions:
   - name: parse_json 
     description: Parses a object to check type
     parameters:
-      - name: object
+      - name: str_input
         description: The item to check
         required: true
         multiline: true
