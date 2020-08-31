@@ -108,7 +108,7 @@ class Tools(AppBase):
 
         return "Some return: %s" % shuffle_input 
 
-    async def test(self, input_data):
+    async def json_parse(self, input_data):
         json_strings = input_data.replace("\\","")
         json_object = json.loads(json_strings)
         return json_object

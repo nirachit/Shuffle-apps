@@ -107,14 +107,14 @@ actions:
       schema:
         type: string
 
-  - name: get_type 
+  - name: parse_json 
     description: Parses a object to check type
     parameters:
       - name: object
         description: The item to check
         required: true
         multiline: true
-        example: Hello this is a string
+        example: this is json strings
         schema:
           type: string 
     returns:
