@@ -110,7 +110,7 @@ class Tools(AppBase):
         return "Some return: %s" % shuffle_input 
 
     async def parse_json(self, str_input):
-        json_strings = re.split(', :',str_input)
+        json_strings = re.sub('[^A-Za-z0-9.]+', '', str_input)
         #json_object = json.loads(json_strings)
         return json_strings
 
