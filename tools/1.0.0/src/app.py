@@ -115,7 +115,8 @@ class Tools(AppBase):
         #json_object = json.loads(json_strings)
         #return (str_input.split('"src": "')[1]).split('", "http_user_agent":')[0]
 
-        return list_json[list_json.index("src")+1]
+        #return list_json[list_json.index("src")+1]
+        return list_json
     
 if __name__ == "__main__":
     asyncio.run(Tools.run(), debug=True)
