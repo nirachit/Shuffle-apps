@@ -108,13 +108,34 @@ actions:
         type: string
 
   - name: parse_json 
-    description: Parses a object to check type
+    description: get ip and time ref from webhook
     parameters:
       - name: str_input
-        description: The item to check
+        description: strings input
         required: true
         multiline: true
-        example: why this is too hard
+        example: strings body from splunk webhook
+        schema:
+          type: string 
+    returns:
+      schema:
+        type: string
+
+  - name: write_file 
+    description: 
+    parameters:
+      - name: result
+        description: result from analyzer
+        required: true
+        multiline: true
+        example: json result
+        schema:
+          type: string 
+      - name: ref_time
+        description: alert time reference
+        required: true
+        multiline: true
+        example: any strings
         schema:
           type: string 
     returns:

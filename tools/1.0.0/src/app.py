@@ -118,6 +118,10 @@ class Tools(AppBase):
         #return list_json[list_json.index("src")+1]
         json_object = {"src":list_json[list_json.index("src")+1], "time":list_json[list_json.index("reqtime")+1]}
         return json_object
-    
+
+    async def write_file(self, result, ref_time):
+
+        return socket.gethostname()
+
 if __name__ == "__main__":
     asyncio.run(Tools.run(), debug=True)
