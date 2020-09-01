@@ -4,6 +4,7 @@ import time
 import random
 import json
 import re
+import requests
 
 from ioc_finder import find_iocs
 from walkoff_app_sdk.app_base import AppBase
@@ -120,8 +121,9 @@ class Tools(AppBase):
         return json_object
 
     async def write_file(self, result, ref_time):
+        url = "http://10.88.200.105:9200"
 
-        return socket.gethostname()
+        return requests.get(url).json()
 
 if __name__ == "__main__":
     asyncio.run(Tools.run(), debug=True)
