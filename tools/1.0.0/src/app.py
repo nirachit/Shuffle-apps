@@ -110,11 +110,12 @@ class Tools(AppBase):
         return "Some return: %s" % shuffle_input
 
     async def parse_json(self, str_input):
-        json_strings = re.sub('[^A-Za-z0-9".]', '', str_input)
-        json_strings = json_strings.split("\"\"")
+        str_input = re.sub('[^A-Za-z0-9".]', '', str_input)
+        list_json = str_input.split("\"\"")
         #json_object = json.loads(json_strings)
         #return (str_input.split('"src": "')[1]).split('", "http_user_agent":')[0]
-        return json_strings
+
+        return list_json[list_json.index(src)+1]
     
 if __name__ == "__main__":
     asyncio.run(Tools.run(), debug=True)
