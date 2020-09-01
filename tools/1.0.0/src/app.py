@@ -107,11 +107,12 @@ class Tools(AppBase):
         # May be necessary
         #compile()
 
-        return "Some return: %s" % shuffle_input 
+        return "Some return: %s" % shuffle_input
 
     async def parse_json(self, str_input):
-        json_strings = re.sub('[^A-Za-z0-9.]+', '', str_input)
+        #json_strings = re.sub('[^A-Za-z0-9.]+', '', str_input)
         #json_object = json.loads(json_strings)
+        json_strings = str_input[0,20]
         return json_strings
 
 if __name__ == "__main__":
