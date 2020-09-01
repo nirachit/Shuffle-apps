@@ -114,7 +114,7 @@ actions:
         description: The item to check
         required: true
         multiline: true
-        example: this is json strings
+        example: why this is too hard
         schema:
           type: string 
     returns:
