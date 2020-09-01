@@ -112,8 +112,7 @@ class Tools(AppBase):
     async def parse_json(self, str_input):
         #json_strings = re.sub('[^A-Za-z0-9.]+', '', str_input)
         #json_object = json.loads(json_strings)
-        json_strings = json.loads(str_input)
-        return json_strings
+        return (str_input.split('"src": "')[1]).split('", "http_user_agent":')[0]
 
 if __name__ == "__main__":
     asyncio.run(Tools.run(), debug=True)
