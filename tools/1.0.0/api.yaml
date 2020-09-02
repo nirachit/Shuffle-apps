@@ -121,7 +121,7 @@ actions:
       schema:
         type: string
 
-  - name: write_file 
+  - name: save_results 
     description: 
     parameters:
       - name: result

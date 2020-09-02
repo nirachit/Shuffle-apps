@@ -5,6 +5,7 @@ import random
 import json
 import re
 import requests
+from elasticsearch import Elasticsearch
 
 from ioc_finder import find_iocs
 from walkoff_app_sdk.app_base import AppBase
@@ -120,10 +121,11 @@ class Tools(AppBase):
         json_object = {"src":list_json[list_json.index("src")+1], "time":list_json[list_json.index("reqtime")+1]}
         return json_object
 
-    async def write_file(self, result, ref_time):
-        url = "http://10.88.200.105:9200"
-
-        return requests.get(url).json()
+    async def save_results(self, result, ref_time):
+        es = Elasticsearch([{'host':'10.88.200.105','port':9200}])
+        #res = es.index(index='results', doc_type='result', id=ref_time,body=result)
+        res = es.get(index='results',doc_type='result',id=2)
+        return res['_source']
 
 if __name__ == "__main__":
     asyncio.run(Tools.run(), debug=True)
