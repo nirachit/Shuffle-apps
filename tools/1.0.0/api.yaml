@@ -138,6 +138,13 @@ actions:
         example: any strings
         schema:
           type: string 
+      - name: analyzer_name
+        description: analyzer name
+        required: true
+        multiline: true
+        example: ip_void
+        schema:
+          type: string
     returns:
       schema:
         type: string

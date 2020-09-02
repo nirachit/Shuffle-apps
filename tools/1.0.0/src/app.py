@@ -121,9 +121,9 @@ class Tools(AppBase):
         json_object = {"src":list_json[list_json.index("src")+1], "time":list_json[list_json.index("reqtime")+1]}
         return json_object
 
-    async def save_results(self, result, ref_time):
+    async def save_results(self, result, ref_time, analyzer_name):
         es = Elasticsearch([{'host':'10.88.200.105','port':9200}])
-        res = es.index(index='results', doc_type='result', id=ref_time, body=eval(result))
+        res = es.index(index='results', doc_type='result', id=ref_time+analyzer_name, body=eval(result))
 
         return res
 
