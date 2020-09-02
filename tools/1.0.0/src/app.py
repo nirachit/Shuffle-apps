@@ -124,8 +124,9 @@ class Tools(AppBase):
     async def save_results(self, result, ref_time):
         es = Elasticsearch([{'host':'10.88.200.105','port':9200}])
         #res = es.index(index='results', doc_type='result', id=ref_time, body=json.loads(result))
-        res = json.loads(result)
-        return type(res)
+        print(result)
+        print(type(result))
+        return "hello world"
 
 if __name__ == "__main__":
     asyncio.run(Tools.run(), debug=True)
