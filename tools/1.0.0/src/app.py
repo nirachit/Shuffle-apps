@@ -125,7 +125,7 @@ class Tools(AppBase):
         es = Elasticsearch([{'host':'10.88.200.105','port':9200}])
         res = es.index(index='results', doc_type='result', id=ref_time, body=eval(result))
 
-        return "hello world"
+        return res
 
 if __name__ == "__main__":
     asyncio.run(Tools.run(), debug=True)
