@@ -123,8 +123,7 @@ class Tools(AppBase):
 
     async def save_results(self, result, ref_time):
         es = Elasticsearch([{'host':'10.88.200.105','port':9200}])
-        #res = es.index(index='results', doc_type='result', id=ref_time,body=result)
-        res = es.get(index='results',doc_type='result',id=2)
+        res = es.index(index='results', doc_type='result', id=ref_time, body=result)
         return res
 
 if __name__ == "__main__":
